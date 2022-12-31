@@ -1,13 +1,52 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+    --clr-primary-100: #0079ff;
+    --clr-primary-200: #697c9a;
+    --clr-primary-300: #4b6a9b;
+    --clr-primary-400: #2b3442;
+    --clr-primary-500: #f6f8ff;
+    --clr-primary-600: #fefefe;
+    --clr-primary-700: #60abff;
+
+    --clr-dark-mode-100: #ffffff;
+    --clr-dark-mode-200: #141d2f;
+    --clr-dark-mode-300: #1e2a47;
+
+    --fs-title: 1.625rem;
+    --fs-toggle: 0.8125rem;
+    --fs-button: 0.875rem;
+    --fs-input-placeholder: 0.8125rem;
+    --fs-name: 1rem;
+    --fs-username: 0.8125rem;
+    --fs-date: 0.8125rem;
+    --fs-bio: 0.8125rem;
+    --fs-repos: 0.6875rem;
+    --fs-stat-number: 1rem;
+    --fs-social: 0.8125rem;
+
+    --br-100: 0.625rem;
+    --br-200: 0.9375rem;
+
+    --bs-100: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+
+    --max-width-100: 20.4375rem;
+    --max-width-200: 35.8125rem;
+    --max-width-300: 45.625rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+}
+
+img {
+    display: block;
+    width: 100%;
 }
