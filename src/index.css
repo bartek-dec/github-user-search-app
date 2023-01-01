@@ -47,11 +47,16 @@ body {
     font-family: "Space Mono", monospace;
     font-weight: 400;
     color: var(--clr-primary-500);
+    transition: var(--transition);
 }
 
 img {
     display: block;
     width: 100%;
+}
+
+.light-theme {
+    color: var(--clr-dark-mode-200);
 }
 
 /*================*/
@@ -60,8 +65,13 @@ img {
 .main {
     min-height: 100vh;
     background-color: var(--clr-dark-mode-200);
+    transition: var(--transition);
 
     padding: 5rem 0;
+}
+
+.light-theme .main {
+    background-color: var(--clr-primary-500);
 }
 
 .center {
@@ -129,6 +139,12 @@ img {
     border-radius: var(--br-200);
     padding: 0.65rem;
     padding-left: 1rem;
+    transition: var(--transition);
+}
+
+.light-theme .section-form {
+    background-color: var(--clr-primary-600);
+    box-shadow: var(--bs-100);
 }
 
 .form {
@@ -156,6 +172,10 @@ img {
     border: none;
 }
 
+.light-theme .form-input {
+    color: inherit;
+}
+
 .form-input:focus {
     outline: none;
 }
@@ -168,6 +188,10 @@ img {
     color: var(--clr-primary-600);
     font-size: var(--fs-input-placeholder);
     font-family: inherit;
+}
+
+.light-theme .form-input::placeholder {
+    color: inherit;
 }
 
 .form-btn {
@@ -204,6 +228,11 @@ img {
     'e e e '
     'f f f '
     'g g g ';
+}
+
+.light-theme .user {
+    background-color: var(--clr-primary-600);
+    box-shadow: var(--bs-100);
 }
 
 .user-img {
@@ -251,6 +280,10 @@ img {
     align-items: center;
 
     grid-area: f;
+}
+
+.light-theme .user-repos{
+    background-color: var(--clr-primary-500);
 }
 
 .repos-header {
