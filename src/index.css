@@ -73,6 +73,10 @@ img {
     max-width: var(--max-width-300);
 }
 
+.gray {
+    color: var(--clr-primary-200);
+}
+
 /*================*/
 /*= Nav
 /*================*/
@@ -96,6 +100,7 @@ img {
     font-size: var(--fs-toggle);
     font-weight: 700;
     cursor: pointer;
+    letter-spacing: 2px;
 
     display: none;
 }
@@ -296,7 +301,7 @@ img {
 
     .user-repos {
         justify-content: flex-start;
-        gap: 0 5rem;
+        gap: 0 20%;
     }
 
     .repos-header {
@@ -329,6 +334,15 @@ img {
 }
 
 @media screen and (min-width: 730px) {
+    .form-input {
+        font-size: calc(var(--fs-input-placeholder) * 1.2);
+    }
+
+
+    .form-input::placeholder {
+        font-size: calc(var(--fs-input-placeholder) * 1.2);
+    }
+
     .user {
         grid-template-areas:
     'a b d '
@@ -361,6 +375,15 @@ img {
         font-size: calc(var(--fs-date) * 1.2);
         font-weight: 400;
         grid-area: d;
+    }
+
+    .user-bio {
+        font-size: calc(var(--fs-bio) * 1.2);
+    }
+
+    .user-repos {
+        justify-content: flex-start;
+        gap: 0 25%;
     }
 }
 

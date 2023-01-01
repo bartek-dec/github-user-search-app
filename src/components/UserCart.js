@@ -17,31 +17,36 @@ const UserCart = () => {
     return (
         <article className='user'>
             <img src={avatar_url} alt='avatar' className='user-img'/>
-            <h2 className='user-name'>{name || notAvailable}</h2>
-            <h3 className='user-login'>{login ? `@${login}` : notAvailable}</h3>
-            <h3 className='user-created-at'>{created_at ? `Joined ${moment(created_at).format('Do MMM YYYY')}` : notAvailable}</h3>
-            <p className='user-bio'>{bio || 'This profile has no bio'}</p>
+            <h2 className={name ? 'user-name' : 'user-name gray'}>{name || notAvailable}</h2>
+            <h3 className={login ? 'user-login' : 'user-login gray'}>{login ? `@${login}` : notAvailable}</h3>
+            <h3 className={created_at ? 'user-created-at' : 'user-created-at gray'}>{created_at ? `Joined ${moment(created_at).format('Do MMM YYYY')}` : notAvailable}</h3>
+            <p className={bio ? 'user-bio' : 'user-bio gray'}>{bio || 'This profile has no bio'}</p>
 
             <div className='user-repos'>
-                <div className='repos'>
+                <div className={public_repos ? 'repos' : 'repos gray'}>
                     <p className='repos-header'>Repos</p>
                     <p className='repo-result'>{public_repos || 0}</p>
                 </div>
-                <div className='repos'>
+                <div className={followers ? 'repos' : 'repos gray'}>
                     <p className='repos-header'>Followers</p>
                     <p className='repo-result'>{followers || 0}</p>
                 </div>
-                <div className='repos'>
+                <div className={following ? 'repos' : 'repos gray'}>
                     <p className='repos-header'>Following</p>
                     <p className='repo-result'>{following || 0}</p>
                 </div>
             </div>
 
             <div className='user-socials'>
-                <p className='social location'><span className='icon'><MdLocationOn/></span> {location || notAvailable}</p>
-                <p className='social blog'><span className='icon'><FaLink/></span> {blog || notAvailable}</p>
-                <p className='social twitter'><span className='icon'><BsTwitter/></span> {twitter_username || notAvailable}</p>
-                <p className='social company'><span className='icon'><BsBuilding/></span> {company || notAvailable}</p>
+                <p className={location ? 'social location' : 'social location gray'}><span
+                    className='icon'><MdLocationOn/></span> {location || notAvailable}
+                </p>
+                <p className={blog ? 'social blog' : 'social blog gray'}><span
+                    className='icon'><FaLink/></span> {blog || notAvailable}</p>
+                <p className={twitter_username ? 'social twitter' : 'social twitter gray'}><span
+                    className='icon'><BsTwitter/></span> {twitter_username || notAvailable}</p>
+                <p className={company ? 'social company' : 'social company gray'}><span
+                    className='icon'><BsBuilding/></span> {company || notAvailable}</p>
             </div>
         </article>
     );
