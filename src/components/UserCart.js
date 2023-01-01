@@ -38,10 +38,10 @@ const UserCart = () => {
             </div>
 
             <div className='user-socials'>
-                <p className='social'><span className='icon'><MdLocationOn/></span> {location || notAvailable}</p>
-                <p className='social'><span className='icon'><FaLink/></span> {blog || notAvailable}</p>
-                <p className='social'><span className='icon'><BsTwitter/></span> {twitter_username || notAvailable}</p>
-                <p className='social'><span className='icon'><BsBuilding/></span> {company || notAvailable}</p>
+                <p className='social location'><span className='icon'><MdLocationOn/></span> {location || notAvailable}</p>
+                <p className='social blog'><span className='icon'><FaLink/></span> {blog || notAvailable}</p>
+                <p className='social twitter'><span className='icon'><BsTwitter/></span> {twitter_username || notAvailable}</p>
+                <p className='social company'><span className='icon'><BsBuilding/></span> {company || notAvailable}</p>
             </div>
         </article>
     );

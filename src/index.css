@@ -279,3 +279,71 @@ img {
     font-size: 1.5rem;
 
 }
+
+@media screen and (min-width: 573px) {
+    .user {
+        grid-template-columns: 7rem 1fr 1fr;
+        gap: 0 2rem;
+    }
+
+    .user-name {
+       align-self: flex-end;
+    }
+
+    .user-login {
+       align-self: center;
+    }
+
+    .user-repos {
+        justify-content: flex-start;
+        gap: 0 5rem;
+    }
+
+    .repos-header {
+        text-align: left;
+    }
+
+    .repo-result {
+        text-align: left;
+    }
+
+    .user-socials {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .location {
+        order: 0;
+    }
+
+    .blog {
+        order: 2;
+    }
+
+    .twitter {
+        order: 1;
+    }
+
+    .company {
+        order: 3;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
