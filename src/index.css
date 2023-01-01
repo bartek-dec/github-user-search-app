@@ -286,6 +286,10 @@ img {
 }
 
 @media screen and (min-width: 573px) {
+    .form {
+        gap: 0 1rem;
+    }
+
     .user {
         grid-template-columns: 7rem 1fr 1fr;
         gap: 0 2rem;
