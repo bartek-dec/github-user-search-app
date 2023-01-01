@@ -287,11 +287,11 @@ img {
     }
 
     .user-name {
-       align-self: flex-end;
+        align-self: flex-end;
     }
 
     .user-login {
-       align-self: center;
+        align-self: center;
     }
 
     .user-repos {
@@ -328,7 +328,41 @@ img {
     }
 }
 
+@media screen and (min-width: 730px) {
+    .user {
+        grid-template-areas:
+    'a b d '
+    'a c c '
+    'a e e '
+    'h f f '
+    'h g g ';
+    }
 
+    .user-img {
+        align-self: flex-start;
+    }
+
+    .user-name {
+        font-size: calc(var(--fs-name) * 1.5);
+        margin-bottom: 0.25rem;
+        grid-area: b;
+    }
+
+    .user-login {
+        font-size: calc(var(--fs-username) * 1.2);
+        color: var(--clr-primary-100);
+        font-weight: 400;
+        margin-bottom: 0.4rem;
+
+        grid-area: c;
+    }
+
+    .user-created-at {
+        font-size: calc(var(--fs-date) * 1.2);
+        font-weight: 400;
+        grid-area: d;
+    }
+}
 
 
 
