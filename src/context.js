@@ -2,6 +2,7 @@ import React, {useState, useContext, useEffect} from "react";
 import axios from "axios";
 
 const url = 'https://api.github.com/users';
+const rate_url = 'https://api.github.com/rate_limit';
 const AppContext = React.createContext();
 
 const ContextProvider = ({children}) => {
@@ -9,6 +10,8 @@ const ContextProvider = ({children}) => {
     const [userName, setUserName] = useState('octocat');
     const [user, setUser] = useState({});
     const [error, setError] = useState(true);
+    const [message, setMessage] = useState('');
+    const [limit, setLimit] = useState(60);
 
     useEffect(() => {
         //findUser(url);
@@ -21,11 +24,25 @@ const ContextProvider = ({children}) => {
 
     const findUser = async () => {
         try {
+            let rate = await axios.get(rate_url);
+            let {remaining} = rate.data.resources.core;
+
+            if (remaining < 1) {
+                setError(true);
+                setMessage('You used hourly search limit. Try in an hour.')
+                setLimit(remaining);
+                return;
+            }
+
             const {data} = await axios.get(`${url}/${userName}`, {
                 headers: {
                     Accept: "application/vnd.github+json",
                 }
             });
+
+            rate = await axios.get(rate_url);
+            remaining = rate.data.resources.core;
+            setLimit(remaining);
 
             if (!data) {
                 setError(true);
@@ -42,13 +59,15 @@ const ContextProvider = ({children}) => {
                 blog, twitter_username, company
             });
             setError(false);
+            setMessage('');
         } catch (error) {
             setError(true);
+            setMessage('Something went wrong.')
         }
     }
 
     return (
-        <AppContext.Provider value={{isDarkMode, toggleTheme, user, setUserName, findUser, error}}>
+        <AppContext.Provider value={{isDarkMode, toggleTheme, user, setUserName, findUser, error, message}}>
             {children}
         </AppContext.Provider>
     );
