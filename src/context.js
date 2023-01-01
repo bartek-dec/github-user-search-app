@@ -9,9 +9,9 @@ const ContextProvider = ({children}) => {
     const [isDarkMode, setIsDarkMode] = useState(true);
     const [userName, setUserName] = useState('octocat');
     const [user, setUser] = useState({});
-    const [error, setError] = useState(true);
+    const [error, setError] = useState(false);
     const [message, setMessage] = useState('');
-    const [limit, setLimit] = useState(60);
+    const [limit, setLimit] = useState('');
 
     useEffect(() => {
         findUser(url);
@@ -41,7 +41,7 @@ const ContextProvider = ({children}) => {
             });
 
             rate = await axios.get(rate_url);
-            remaining = rate.data.resources.core;
+            remaining = rate.data.resources.core.remaining;
             setLimit(remaining);
 
             if (!data) {
