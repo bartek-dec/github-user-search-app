@@ -61,7 +61,7 @@ img {
     min-height: 100vh;
     background-color: var(--clr-dark-mode-200);
 
-    padding-top: 10rem;
+    padding: 5rem 0;
 }
 
 .center {
@@ -179,12 +179,103 @@ img {
     transition: var(--transition);
 }
 
+/*================*/
+/*= User
+/*================*/
+.user {
+    background-color: var(--clr-dark-mode-300);
+    margin-top: 1.5rem;
+    border-radius: var(--br-200);
+    padding: 2rem;
+    padding-bottom: 3rem;
 
+    display: grid;
+    grid-template-columns: 4.5rem 1fr 1fr;
+    gap: 0 1rem;
+    grid-template-areas:
+    'a b b '
+    'a c c '
+    'a d d '
+    'e e e '
+    'f f f '
+    'g g g ';
+}
 
+.user-img {
+    border-radius: 50%;
+    align-self: center;
+    grid-area: a;
+}
 
+.user-name {
+    font-size: var(--fs-name);
+    margin-bottom: 0.25rem;
+    grid-area: b;
+}
 
+.user-login {
+    font-size: var(--fs-username);
+    color: var(--clr-primary-100);
+    font-weight: 400;
+    margin-bottom: 0.4rem;
 
+    grid-area: c;
+}
 
+.user-created-at {
+    font-size: var(--fs-date);
+    font-weight: 400;
+    grid-area: d;
+}
 
+.user-bio {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    font-size: var(--fs-bio);
+    grid-area: e;
+}
 
+.user-repos {
+    padding: 1.25rem 2rem;
+    background-color: var(--clr-dark-mode-200);
+    border-radius: var(--br-100);
+    margin-bottom: 2rem;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    grid-area: f;
+}
+
+.repos-header {
+    text-align: center;
+    font-size: var(--fs-repos);
+    margin-bottom: 0.5rem;
+}
+
+.repo-result {
+    text-align: center;
+    font-size: var(--fs-stat-number);
+    font-weight: 700;
+}
+
+.user-socials {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem 0;
+
+    grid-area: g;
+}
+
+.social {
+    font-size: var(--fs-social);
+    display: flex;
+    align-items: center;
+    gap: 0 1.25rem;
+}
+
+.icon {
+    font-size: 1.5rem;
+
+}
