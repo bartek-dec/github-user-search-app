@@ -1,11 +1,12 @@
 import React, {useState, useContext} from "react";
 
+const url = 'https://api.github.com/users/USERNAME';
 const AppContext = React.createContext();
 
 const ContextProvider = ({children}) => {
     const [isDarkMode, setIsDarkMode] = useState(true);
 
-    const toggleTheme = (e) => {
+    const toggleTheme = () => {
         setIsDarkMode(!isDarkMode);
     }
 

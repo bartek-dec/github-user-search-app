@@ -33,6 +33,8 @@
     --max-width-100: 20.4375rem;
     --max-width-200: 35.8125rem;
     --max-width-300: 45.625rem;
+
+    --transition: 0.3s all linear;
 }
 
 *, ::before, ::after {
@@ -76,6 +78,7 @@ img {
 /*================*/
 .navbar {
     height: 4rem;
+    margin-bottom: 1.5rem;
 
     display: flex;
     justify-content: space-between;
@@ -113,11 +116,68 @@ img {
     align-items: center;
 }
 
+/*================*/
+/*= Form
+/*================*/
+.section-form {
+    background-color: var(--clr-dark-mode-300);
+    border-radius: var(--br-200);
+    padding: 0.65rem;
+    padding-left: 1rem;
+}
 
+.form {
+    display: grid;
+    grid-template-columns: 2rem auto 6.5rem;
+    align-items: center;
+    gap: 0 0.5rem;
+}
 
+.form-icon {
+    order: -1;
+    font-size: 2rem;
+    color: var(--clr-primary-100);
+    transition: var(--transition);
 
+    display: flex;
+    align-items: center;
+}
 
+.form-input {
+    font-size: var(--fs-input-placeholder);
+    font-family: inherit;
+    color: var(--clr-primary-600);
+    background-color: transparent;
+    border: none;
+}
 
+.form-input:focus {
+    outline: none;
+}
+
+.form-input:focus ~ .form-icon {
+    font-size: 1.65rem;
+}
+
+.form-input::placeholder {
+    color: var(--clr-primary-600);
+    font-size: var(--fs-input-placeholder);
+    font-family: inherit;
+}
+
+.form-btn {
+    background-color: var(--clr-primary-100);
+    color: var(--clr-primary-600);
+    border: none;
+    border-radius: var(--br-100);
+    padding: 1rem 0;
+    font-size: var(--fs-button);
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: var(--transition);
+}
 
 
 
