@@ -14,7 +14,7 @@ const ContextProvider = ({children}) => {
     const [limit, setLimit] = useState(60);
 
     useEffect(() => {
-        //findUser(url);
+        findUser(url);
         // eslint-disable-next-line
     }, []);
 
@@ -67,7 +67,7 @@ const ContextProvider = ({children}) => {
     }
 
     return (
-        <AppContext.Provider value={{isDarkMode, toggleTheme, user, setUserName, findUser, error, message}}>
+        <AppContext.Provider value={{isDarkMode, toggleTheme, user, setUserName, findUser, error, message, limit}}>
             {children}
         </AppContext.Provider>
     );

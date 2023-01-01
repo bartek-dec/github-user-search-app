@@ -1,5 +1,5 @@
 import React from 'react';
-import {Nav, Form, UserCart, Error} from "../components";
+import {Nav, Form, UserCart, Error, RateLimit} from "../components";
 import {useGlobalContext} from "../context";
 
 const LandingPage = () => {
@@ -8,6 +8,7 @@ const LandingPage = () => {
     return (
         <main className='main'>
             <div className='wrapper center'>
+                <RateLimit/>
                 <Nav/>
                 <Form/>
                 {!error ? <UserCart/> : <Error/>}

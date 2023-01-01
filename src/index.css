@@ -302,6 +302,17 @@ img {
     margin-bottom: 3rem;
 }
 
+/*================*/
+/*= Rate Limit
+/*================*/
+.rate-heading {
+    font-size: var(--fs-toggle);
+    color: #c90a11;
+    letter-spacing: 2px;
+
+    margin-bottom: 1rem;
+}
+
 @media screen and (min-width: 573px) {
     .form {
         gap: 0 1rem;
