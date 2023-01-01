@@ -1,5 +1,5 @@
 import React from 'react';
-import {Nav, Form} from "../components";
+import {Nav, Form, UserCart} from "../components";
 
 const LandingPage = () => {
     return (
@@ -7,6 +7,7 @@ const LandingPage = () => {
             <div className='wrapper center'>
                 <Nav/>
                 <Form/>
+                <UserCart/>
             </div>
         </main>
     );

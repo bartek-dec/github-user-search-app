@@ -6,7 +6,6 @@ import {BsTwitter, BsBuilding} from 'react-icons/bs';
 import {FaLink} from 'react-icons/fa';
 
 const UserCart = () => {
-    const tempImg = 'https://avatars.githubusercontent.com/u/583231?v=4';
     const notAvailable = 'Not available';
     const {user} = useGlobalContext();
     const {
