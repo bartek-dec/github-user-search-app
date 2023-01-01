@@ -1,13 +1,16 @@
 import React from 'react';
-import {Nav, Form, UserCart} from "../components";
+import {Nav, Form, UserCart, Error} from "../components";
+import {useGlobalContext} from "../context";
 
 const LandingPage = () => {
+    const {error} = useGlobalContext();
+
     return (
         <main className='main'>
             <div className='wrapper center'>
                 <Nav/>
                 <Form/>
-                <UserCart/>
+                {!error ? <UserCart/> : <Error/>}
             </div>
         </main>
     );

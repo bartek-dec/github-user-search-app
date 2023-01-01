@@ -8,9 +8,10 @@ const ContextProvider = ({children}) => {
     const [isDarkMode, setIsDarkMode] = useState(true);
     const [userName, setUserName] = useState('octocat');
     const [user, setUser] = useState({});
+    const [error, setError] = useState(true);
 
     useEffect(() => {
-        findUser(url);
+        //findUser(url);
         // eslint-disable-next-line
     }, []);
 
@@ -20,12 +21,17 @@ const ContextProvider = ({children}) => {
 
     const findUser = async () => {
         try {
-            console.log(`${url}/${userName}`);
             const {data} = await axios.get(`${url}/${userName}`, {
                 headers: {
                     Accept: "application/vnd.github+json",
                 }
             });
+
+            if (!data) {
+                setError(true);
+                return;
+            }
+
             const {
                 avatar_url, name, login, created_at, bio, public_repos, followers, following, location, blog,
                 twitter_username, company
@@ -35,13 +41,14 @@ const ContextProvider = ({children}) => {
                 avatar_url, name, login, created_at, bio, public_repos, followers, following, location,
                 blog, twitter_username, company
             });
+            setError(false);
         } catch (error) {
-            console.log(error);
+            setError(true);
         }
     }
 
     return (
-        <AppContext.Provider value={{isDarkMode, toggleTheme, user, setUserName, findUser}}>
+        <AppContext.Provider value={{isDarkMode, toggleTheme, user, setUserName, findUser, error}}>
             {children}
         </AppContext.Provider>
     );
