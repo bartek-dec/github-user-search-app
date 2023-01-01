@@ -20,11 +20,17 @@ const ContextProvider = ({children}) => {
 
     const toggleTheme = () => {
         setIsDarkMode(!isDarkMode);
+        document.body.classList.toggle('light-theme');
+    }
+
+    const getRate = async () => {
+        const resp = await axios.get(rate_url);
+        return resp;
     }
 
     const findUser = async () => {
         try {
-            let rate = await axios.get(rate_url);
+            let rate = await getRate();
             let {remaining} = rate.data.resources.core;
 
             if (remaining < 1) {
@@ -40,7 +46,7 @@ const ContextProvider = ({children}) => {
                 }
             });
 
-            rate = await axios.get(rate_url);
+            rate = await getRate();
             remaining = rate.data.resources.core.remaining;
             setLimit(remaining);
 
@@ -61,6 +67,9 @@ const ContextProvider = ({children}) => {
             setError(false);
             setMessage('');
         } catch (error) {
+            const rate = await getRate();
+            const {remaining} = rate.data.resources.core;
+            setLimit(remaining);
             setError(true);
             setMessage('Something went wrong.')
         }
