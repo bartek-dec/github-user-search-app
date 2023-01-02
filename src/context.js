@@ -37,6 +37,7 @@ const ContextProvider = ({children}) => {
                 setError(true);
                 setMessage('You used hourly search limit. Try in an hour.')
                 setLimit(remaining);
+                setUserName('');
                 return;
             }
 
@@ -66,17 +67,24 @@ const ContextProvider = ({children}) => {
             });
             setError(false);
             setMessage('');
+            setUserName('');
         } catch (error) {
             const rate = await getRate();
             const {remaining} = rate.data.resources.core;
             setLimit(remaining);
             setError(true);
-            setMessage('Something went wrong.')
+            setMessage('Something went wrong.');
+            setUserName('');
         }
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        findUser();
     }
 
     return (
-        <AppContext.Provider value={{isDarkMode, toggleTheme, user, setUserName, findUser, error, message, limit}}>
+        <AppContext.Provider
+            value={{isDarkMode, toggleTheme, user, userName, setUserName, error, message, limit, handleSubmit}}>
             {children}
         </AppContext.Provider>
     );
