@@ -199,13 +199,18 @@ img {
     color: var(--clr-primary-600);
     border: none;
     border-radius: var(--br-100);
-    padding: 1rem 0;
+    height: 3.4rem;
     font-size: var(--fs-button);
     font-weight: 700;
     letter-spacing: 1px;
     font-family: inherit;
     cursor: pointer;
     transition: var(--transition);
+}
+
+.form-btn:hover{
+    font-size: calc(var(--fs-button) * 1.15);
+    background-color: var(--clr-primary-700);
 }
 
 /*================*/
@@ -235,10 +240,15 @@ img {
     box-shadow: var(--bs-100);
 }
 
+.user-img-container {
+    background-color: var(--clr-primary-600);
+    border-radius: 50%;
+    grid-area: a;
+}
+
 .user-img {
     border-radius: 50%;
     align-self: center;
-    grid-area: a;
 }
 
 .user-name {
@@ -282,7 +292,7 @@ img {
     grid-area: f;
 }
 
-.light-theme .user-repos{
+.light-theme .user-repos {
     background-color: var(--clr-primary-500);
 }
 
@@ -417,7 +427,7 @@ img {
     'h g g ';
     }
 
-    .user-img {
+    .user-img-container {
         align-self: flex-start;
     }
 

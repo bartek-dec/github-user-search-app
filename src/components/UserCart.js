@@ -15,7 +15,9 @@ const UserCart = () => {
 
     return (
         <article className='user'>
-            <img src={avatar_url} alt='avatar' className='user-img'/>
+            <div className='user-img-container'>
+                <img src={avatar_url} alt='avatar' className='user-img'/>
+            </div>
             <h2 className={name ? 'user-name' : 'user-name gray'}>{name || notAvailable}</h2>
             <h3 className={login ? 'user-login' : 'user-login gray'}>{login ? `@${login}` : notAvailable}</h3>
             <h3 className={created_at ? 'user-created-at' : 'user-created-at gray'}>{created_at ? `Joined ${moment(created_at).format('Do MMM YYYY')}` : notAvailable}</h3>
